@@ -1,0 +1,14 @@
+p{
+    margin: 20px;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: arial;
+}
+
+#p1{
+    color: blue;
+}
+
+#p2{
+    color: red;
+}
