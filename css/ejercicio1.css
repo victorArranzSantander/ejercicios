@@ -6,4 +6,6 @@ div{
     margin: 50px;
     padding: 40px;
     text-transform: uppercase;
+    line-height: 150px;
+    text-align: center;
 }
