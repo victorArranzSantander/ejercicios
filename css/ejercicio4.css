@@ -1,0 +1,20 @@
+a{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#a1{
+    color: yellow;
+}
+
+#a1:hover{
+    color: green;
+}
+
+#a2{
+    color: violet;
+}
+
+#a2:hover{
+    color: red;
+}
