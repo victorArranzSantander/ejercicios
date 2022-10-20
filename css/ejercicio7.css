@@ -1,0 +1,12 @@
+table, td{
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: yellow;
+}
+
+th{
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+
