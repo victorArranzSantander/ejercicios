@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+body{
+    background: linear-gradient(to bottom, rgb(110, 110, 237), white 80%, rgb(232, 180, 85));
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid;
+    padding: 10px;
+    margin: 10px;
+}
+
+th:hover{
+    color: aqua;
+    background-color: black;
+}
+
+button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #22ed62;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover span {
+    padding-right: 25px;
+}
+
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+a{
+    color:rgb(2, 76, 102);
+}
