@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "tarjetas_card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm" id = "arriba">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img
+                  src="images/logo.png"
+                  height="50px"
+                  alt="Logo"
+                  loading="lazy"
+                />
+            </a>
+            <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>-->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-home"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ofertas">Ofertas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#nuevos">Nuevos</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+
+    <div class = "container">
+        <div class = "row justify-content-center">
+            <!-- Articulo 1 -->
+            <div class="card text-center" style="width: 18rem;">
+                <img src="images/adidas_predator.jpeg" class="card-img-top" alt="Adidas Predator">
+                <div class="card-body">
+                  <h2 class="card-title">Adidas Predator</h2>
+                  <p class="card-text">Descripción del artículo</p>
+                  <button type="button" class="btn btn-success align-self-end">Buy</button>
+                  <button type="button" class="btn btn-secondary align-self-end">Reserve</button>
+                </div>
+            </div>
+            <!-- Articulo 2 -->
+            <div class="card text-center" style="width: 18rem;">
+                <img src="images/nike_mercurial.jpeg" class="card-img-top" alt="Nike Mercurial">
+                <div class="card-body">
+                  <h2 class="card-title">Nike Mercurial</h2>
+                  <p class="card-text">Descripción del artículo</p>
+                  <button type="button" class="btn btn-success">Buy</button>
+                  <button type="button" class="btn btn-secondary">Reserve</button>
+                </div>
+              </div>
+            <!-- Articulo 3 -->
+            <div class="card text-center" style="width: 18rem;">
+                <img src="images/new_balance.jpeg" class="card-img-top" alt="New Balance Furon">
+                <div class="card-body">
+                  <h2 class="card-title">New Balance Furon</h2>
+                  <p class="card-text">Descripción del artículo</p>
+                  <button type="button" class="btn btn-success">Buy</button>
+                  <button type="button" class="btn btn-secondary">Reserve</button>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <section id = "ofertas">
+        <div class = "container">
+            <div class = "row justify-content-center">
+                <!-- Articulo de oferta  -->
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="images/puma.jpeg" class="card-img-top" alt="Puma future">
+                    <div class="card-body">
+                      <h2 class="card-title">Puma future</h2>
+                      <p class="card-text">Descripción del artículo</p>
+                      <button type="button" class="btn btn-success align-self-end">Buy</button>
+                      <button type="button" class="btn btn-secondary align-self-end">Reserve</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id = "nuevos">
+        <div class = "container">
+            <div class = "row justify-content-center">
+                <!-- Articulo nuevos  -->
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="images/mizuno.jpeg" class="card-img-top" alt="Mizuno Morelia">
+                    <div class="card-body">
+                      <h2 class="card-title">Mizuno Morelia</h2>
+                      <p class="card-text">Descripción del artículo</p>
+                      <button type="button" class="btn btn-success align-self-end">Buy</button>
+                      <button type="button" class="btn btn-secondary align-self-end">Reserve</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button type="button" class="btn btn-outline-primary" id = "boton_subir"><a href = "#arriba">Volver arriba</a></button>
+</body>
+</html>
