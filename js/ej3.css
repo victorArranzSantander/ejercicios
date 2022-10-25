@@ -1,0 +1,22 @@
+h1{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.row{
+    margin-top: 1.5rem;
+}
+
+.container{
+    border: 1px solid grey;
+    border-radius: 9px;
+    box-shadow: 10px 5px 5px 0px #dedade;
+    padding: 2rem;
+    background-color: rgb(255, 251, 189);
+}
