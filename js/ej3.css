@@ -10,7 +10,7 @@ h2{
 }
 
 .row{
-    margin-top: 1.5rem;
+    margin-top: 3rem;
 }
 
 .container{
@@ -19,4 +19,13 @@ h2{
     box-shadow: 10px 5px 5px 0px #dedade;
     padding: 2rem;
     background-color: rgb(255, 251, 189);
+    margin-bottom: 2rem;
+}
+
+.btn{
+    margin-bottom: 2rem;
+}
+
+.alert, .text-danger, .text-warning{
+    display: none;
 }
