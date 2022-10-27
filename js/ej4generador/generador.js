@@ -20,12 +20,16 @@ function numberGenerator(){
 function passwdGenerator(){
     const longitud = longGenerator(MIN, MAX);
     const number = numberGenerator();
-    const posNumber = longGenerator(1, longitud - 1);
-    var password = mayusGenerator();
-    for(var i = 1; i < longitud; i++){
+    const posNumber = longGenerator(0, longitud - 1);
+    const mayus = mayusGenerator();
+    const posMayus = longGenerator(0, longitud - 1);
+    var password = "";
+    for(var i = 0; i < longitud; i++){
         password += charGenerator();
     }
+    password = password.substring(0, posMayus) + mayus + password.substring(posMayus + 1, longitud);
     password = password.substring(0, posNumber) + number + password.substring(posNumber + 1, longitud);
+    //console.log(password, longitud, number, posNumber, mayus, posMayus);
     return (password)
 }
 
