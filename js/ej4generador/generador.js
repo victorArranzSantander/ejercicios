@@ -39,3 +39,9 @@ function passwdGenerator(){
 document.getElementById("generar").addEventListener("click", function(){
     document.getElementById("password").innerHTML = passwdGenerator();
 })
+
+document.getElementById("copiar").addEventListener("click", async function(){  
+    var copyText = document.getElementById("password").textContent;
+    await navigator.clipboard.writeText(copyText);
+    alert(copyText + " copiado al portapapeles");
+})

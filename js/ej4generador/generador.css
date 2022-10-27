@@ -16,13 +16,15 @@ h1{
 }
 
 #password{
-    margin: 4rem;
     background-color: white;
     padding: 1rem;
     border-radius: 9px;
     width: 80%;
+    margin: auto;
 }
+
 
 .btn{
     margin-top: 2rem;
 }
+
