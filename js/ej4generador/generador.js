@@ -22,7 +22,10 @@ function passwdGenerator(){
     const number = numberGenerator();
     const posNumber = longGenerator(0, longitud - 1);
     const mayus = mayusGenerator();
-    const posMayus = longGenerator(0, longitud - 1);
+    var posMayus = longGenerator(0, longitud - 1);;
+    while(posMayus === posNumber){
+        posMayus = longGenerator(0, longitud - 1);
+    }
     var password = "";
     for(var i = 0; i < longitud; i++){
         password += charGenerator();
