@@ -1,0 +1,24 @@
+button{
+    margin: 10px;
+    width: 100px;
+}
+
+.boton-click{
+    background-color: green;
+    color: white;
+}
+
+.boton-click:hover{
+    background-color: white;
+    color: green;
+}
+
+.boton-reiniciar{
+    background-color: blue;
+    color: white;
+}
+
+.boton-reiniciar:hover{
+    background-color: white;
+    color: blue;
+}
