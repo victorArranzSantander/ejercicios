@@ -1,0 +1,18 @@
+
+
+/*.imagen-testimonio{
+    height: calc(100% - 2rem) !important;
+    width: calc(100% - 2rem) !important;
+    margin: 1rem;
+}*/
+
+.imagen-testimonio{
+    height: 100% !important;
+    width: 100% !important;
+    max-height: 200px;
+}
+
+
+
+
+
