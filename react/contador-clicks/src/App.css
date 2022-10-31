@@ -4,7 +4,8 @@
 }
 
 h1{
-  margin: 2rem auto;
+  margin: auto;
+  padding-top: 20px;
   max-width: 500px;
   font-size: 2.5em;
   font-family: Lato, sans-serif;
@@ -15,6 +16,7 @@ h1{
 
 .App{
   min-height: 100vh;
+  background-color: aqua;
 }
 
 .contenedor-principal{
