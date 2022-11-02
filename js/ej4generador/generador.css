@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+    margin-top: 24px;
+}
+
+.form-row{
+    margin-top: 16px;
+}
+
+#row_passwd{
+    background-color: rgb(64, 210, 161);
+    border-radius: 9px;
+    box-shadow: 10px 5px 5px 0px #dedade;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+#password{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 9px;
+    width: 80%;
+    margin: auto;
+}
+
+
+.btn{
+    margin-top: 2rem;
+}
+

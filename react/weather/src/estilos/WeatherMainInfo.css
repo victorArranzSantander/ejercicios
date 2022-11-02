@@ -1,0 +1,15 @@
+.mapa{
+    border-radius: 9px;
+    margin-top: 10px;
+}
+
+.contenedor_main_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor_main_info span{
+    font-size: 3rem;
+    margin-left: 20px;
+}
