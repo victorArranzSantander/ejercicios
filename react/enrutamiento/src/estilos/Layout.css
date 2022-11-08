@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+
+.container-fluid{
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #e3f2fd;
+}
+
+.container{
+    margin-top: 100px;
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+
+.card{
+    margin: 20px;
+    box-shadow: 10px 5px 5px 0px #dedade;
+}
+
+.card-body{
+    background-color: #e3f2fd;
+    border-radius: 9px;
+    margin-bottom: 16px;
+}
+
+
+.nav-item{
+    margin-left: 20px;
+}
+
+.nav-item:hover{
+    background-color: #54b8ff;
+}
+
+
+
