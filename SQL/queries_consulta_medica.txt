@@ -17,4 +17,4 @@ WHERE T.id_tratamiento = P.tratamiento AND T.nombre_tratamiento LIKE "%ibuprofen
 
 SELECT *
 FROM Tratamiento T, Doctor D
-WHERE T.doctor = D.id_doctor AND D.hospital LIKE '%Hospital 1%'
+WHERE T.doctor = D.id_doctor AND D.hospital LIKE '%Hospital 1%' 
