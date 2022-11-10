@@ -1,0 +1,33 @@
+DROP TABLE IF EXISTS Doctor;
+DROP TABLE IF EXISTS Paciente;
+DROP TABLE IF EXISTS Tratamiento;
+
+
+CREATE TABLE Doctor(
+    id_doctor INTEGER,
+    hospital CHAR(30),
+    nombre CHAR(30),
+    PRIMARY KEY (id_doctor)
+);
+
+CREATE TABLE Tratamiento(
+    id_tratamiento INTEGER,
+    doctor INTEGER,
+    PRIMARY KEY (id_tratamiento),
+    FOREIGN KEY (doctor) REFERENCES Doctor(id_doctor)
+);
+
+CREATE TABLE Paciente(
+    id_paciente INTEGER,
+    doctor INTEGER,
+    fecha_nac DATE,
+    nombre CHAR(30),
+    tratamiento INTEGER,
+    PRIMARY KEY (id_paciente),
+    FOREIGN KEY (doctor) REFERENCES Doctor(id_doctor),
+    FOREIGN KEY (tratamiento) REFERENCES Tratamiento(id_tratamiento)
+);
+
+
+
+    

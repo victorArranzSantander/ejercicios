@@ -1,0 +1,81 @@
+
+CREATE TABLE Pelicula(
+    titulo CHAR(30),
+    director CHAR(30),
+    PRIMARY KEY (titulo)
+);
+
+CREATE TABLE Cinta(
+    numero_cinta INTEGER,
+    prestada BOOLEAN,
+    titulo CHAR(30),
+    PRIMARY KEY (numero_cinta),
+    FOREIGN KEY (titulo) REFERENCES Pelicula(titulo)
+);
+
+CREATE TABLE Socio(
+    codigo_socio INTEGER,
+    nombre CHAR(30),
+    direccion CHAR(30),
+    telefono CHAR(9),
+    PRIMARY KEY (codigo_socio)
+);
+
+CREATE TABLE Genero(
+    genero CHAR(1),
+    PRIMARY KEY (genero)
+);
+
+CREATE TABLE Director(
+	nombre CHAR(30),
+    PRIMARY KEY (nombre)
+);
+
+ALTER TABLE Pelicula ADD FOREIGN KEY (director) REFERENCES Director(nombre);
+
+CREATE TABLE Actor(
+    nombre CHAR(30),
+   	PRIMARY KEY (nombre)
+);
+
+CREATE TABLE GustaGenero(
+    codigo_socio INTEGER,
+    genero CHAR(1),
+    PRIMARY KEY (codigo_socio, genero),
+    FOREIGN KEY (codigo_socio) REFERENCES Socio(codigo_socio),
+    FOREIGN KEY (genero) REFERENCES Genero(genero)
+);
+
+CREATE TABLE GustaDirector(
+    codigo_socio INTEGER,
+    nombre CHAR(30),
+    PRIMARY KEY (codigo_socio, nombre),
+    FOREIGN KEY (codigo_socio) REFERENCES Socio(codigo_socio),
+    FOREIGN KEY (nombre) REFERENCES Director(nombre)
+);
+
+CREATE TABLE GustaActor(
+    codigo_socio INTEGER,
+    nombre CHAR(30),
+    PRIMARY KEY (codigo_socio, nombre),
+    FOREIGN KEY (codigo_socio) REFERENCES Socio(codigo_socio),
+    FOREIGN KEY (nombre) REFERENCES Actor(nombre)
+);
+
+CREATE TABLE GeneroPelicula(
+    genero CHAR(1),
+    titulo CHAR(30),
+    PRIMARY KEY (genero, titulo),
+    FOREIGN KEY (genero) REFERENCES Genero(genero),
+    FOREIGN KEY (titulo) REFERENCES Pelicula(titulo)
+);
+
+
+CREATE TABLE ActorPelicula(
+    nombre CHAR(30),
+    titulo CHAR (30),
+    PRIMARY KEY (nombre, titulo),
+    FOREIGN KEY (nombre) REFERENCES Actor(nombre),
+    FOREIGN KEY (titulo) REFERENCES Pelicula(titulo)
+);
+   

@@ -1,0 +1,20 @@
+SELECT p.id_paciente, p.nombre 
+FROM Paciente p
+WHERE p.fecha_nac < '1990-01-01'
+
+
+
+SELECT P.id_paciente, P.nombre
+FROM Paciente P, Doctor D
+WHERE D.nombre LIKE '%Juan%' AND P.doctor = D.id_doctor
+
+
+
+SELECT P.nombre
+FROM Tratamiento T, Paciente P
+WHERE T.id_tratamiento = P.tratamiento AND T.nombre_tratamiento LIKE "%ibuprofeno%"
+
+
+SELECT *
+FROM Tratamiento T, Doctor D
+WHERE T.doctor = D.id_doctor AND D.hospital LIKE '%Hospital 1%'

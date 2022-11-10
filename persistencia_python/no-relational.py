@@ -9,7 +9,7 @@ db = firestore.client()
 
 print("Título: ")
 titulo = input()
-print("Iban: ")
+print("Iban: ") 
 iban = input()
 print("Páginas: ")
 paginas = int(input())
