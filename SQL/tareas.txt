@@ -1,0 +1,31 @@
+DROP TABLE IF EXISTS Usuario;
+DROP TABLE IF EXISTS Etiqueta;
+DROP TABLE IF EXISTS Tarea;
+
+CREATE TABLE Usuario(
+    id_usuario INTEGER,
+    nombre VARCHAR (30),
+    tlf CHAR (9),
+    email VARCHAR (50),
+    pass VARCHAR (20),
+    PRIMARY KEY (id_usuario)
+);
+
+
+CREATE TABLE Etiqueta(
+    id_etiqueta INTEGER,
+    despcripcion VARCHAR (140),
+    PRIMARY KEY (id_etiqueta)
+);
+
+
+CREATE TABLE Tarea(
+    id_tarea INTEGER,
+    titulo VARCHAR (30),
+    descripcion VARCHAR (140),
+    etiqueta INTEGER,
+    usuario INTEGER,
+    PRIMARY KEY (id_tarea),
+    FOREIGN KEY (etiqueta) REFERENCES Etiqueta (id_etiqueta),
+    FOREIGN KEY (usuario) REFERENCES Usuario (id_usuario)
+);

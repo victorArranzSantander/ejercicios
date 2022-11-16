@@ -1,0 +1,148 @@
+# Iniciar un proyecto en NodeJS
+## Instalar Node y npm
+```bash
+brew install nvm
+
+nvm install 18
+```
+
+## Creamos un archivo llamado holamundo.js
+
+```bash
+touch holamundo.js
+```
+
+## Agregamos este codigo y guardamos
+
+```NodeJS
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 1337;
+
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hola mundo\n');
+}).listen(port, hostname, (error) => {
+    if (error) return console.log(`Error: ${error}`);
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+## Ejecutamos el proyecto
+```bash
+node holamundo.js
+```
+
+## Podemos hacer recoger información
+
+```NodeJS
+console.log(req);
+```
+
+## Podemos recoger variables que mandemos desde la url
+```NodeJS
+   let params = req.url.split("?")[1];
+   let query = {};
+   if (params) {
+     params = params.split("&");
+     params.forEach(param => {
+       let [key, value] = param.split("=");
+       query[key] = value;
+     });
+   }
+   console.log(query);
+
+   res.write(query.info+'\n');
+```
+
+
+# Usando npm install
+## Instalando node-tweet-stream
+```bash
+npm init
+npm install twitter
+touch twitter.js
+```
+
+## Creamos el archivo twitter.js
+```bash
+touch twitter.js
+```
+
+## Incluimos este código:
+
+```NodeJS
+var TwitterStream = require('twitter-stream-api'),
+    fs = require('fs');
+ 
+var keys = {
+    consumer_key: '',
+    consumer_secret: '',
+    token: '',
+    token_secret: ''
+};
+ 
+var Twitter = new TwitterStream(keys, false);
+Twitter.stream('statuses/filter', {
+    track: 'javascript'
+});
+ 
+Twitter.pipe(fs.createWriteStream('tweets.json'));
+```
+
+
+## nos hacemos una cuenta de twitter y generamos los datos de acceso:
+[https://developer.twitter.com/en](https://developer.twitter.com/en)
+
+# Ejercicios
+
+# Ejercicio 1
+Crea una calculadora mandando los parámetros desde la ruta superior.
+
+# Ejercicio 2
+Crea una función que se le envíe un número y compruebe si es par o impar retornando en la consola el número y si es par o no. Si no es un número devolver “no es un número”
+
+## Ejercicio 3
+Inicializar un proyecto de Node.js utilizando NPM dentro de la carpeta ejercicio 3
+El nombre del proyecto tiene que ser Ejercicio 3
+Crear un archivo index.js
+Instalar el módulo one-liner-joke
+Configurar el proyecto para que al correr npm start corra el código del archivo index.js. Mostrar en consola un chiste random. Mostrar en consola las categorías a las que pertenece. 
+El método getRandomJoke retorna un objeto que tiene una propiedad body con el chiste y la propiedad tags con las categorías
+
+## Ejercicio 4
+Crear un archivo con el nombre ejercicio4.js
+Levantar un servidor HTTP en el puero 3001, ejecutar un request a localhost:3001.
+El servidor tiene que responder con el siguiente texto: 'Bienvenidos a Node.js Server Side'.
+Al levantar el servidor tiene que mostrar un mensaje que diga: `Servidor corriendo en el puerto ${puerto}`. 
+En caso de haber un error al levantar, el servidor tiene que mostrar el siguiente mensaje: `No se pudo levantar el servidor en el puerto ${puerto}`
+
+## Ejercicio 5
+Crear un archivo con el nombre ej5.js
+Levantar un servidor HTTP en el puero 3001, ejecutar un request a localhost:3001.
+El servidor tiene que responder con el siguiente texto:
+'Bienvenidos a Node.js Server Side'. Al levantar el servidor tiene que mostrar
+un mensaje que diga: `Servidor corriendo en el puerto ${puerto}`. 
+En caso de haber un error al levantar, el servidor tiene que mostrar el siguiente mensaje:
+`No se pudo levantar el servidor en el puerto ${puerto}`
+(Ayuda) puedes copiar el código de la guía y modificarlo
+
+## Ejericio 6
+Crea un archivo con el nombre ej6.js
+Ahora vamos a jugar a la “Lotería primitiva”. Para ello, se pedirá al usuario que introduzca 6 números enteros comprendidos entre el 1 y el 49 ambos incluidos. No estará permitido repetir número. Una vez elegidos los seis números el programa nos mostrará nuestros 6 números así como la combinación ganadora (ordenada de menor a mayor). Esta combinación constará de 6 números entre 1 y 49 elegidos al azar por el programa. Finalmente nos dirá cuántos aciertos hemos tenido y nos preguntará si queremos volver a jugar.
+
+Ejemplo de ejecución:
+
+Elige 6 numeros entre el 1 y el 49.
+Elige el numero 1 : 3
+Elige el numero 2 : 8
+Elige el numero 3 : 14
+Elige el numero 4 : 2
+Elige el numero 5 : 34
+Elige el numero 6 : 38
+Numeros Elegidos    : 3  8  14  2  34  38
+Combinación ganadora : 6  14   21  27  30  48
+Has acertado : 1 números
+Quieres probar otra vez ? (S/N) : n
+Adiós
