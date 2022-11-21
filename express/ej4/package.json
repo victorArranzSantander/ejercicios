@@ -1,0 +1,12 @@
+{
+  "name": "ej4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ej4.js",
+  "scripts": {
+    "start": "node ej4.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

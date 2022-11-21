@@ -11,23 +11,11 @@ const prompt = require("prompt");
       let number = await prompt.get([
         "Elige el número " + (numbers.length + 1),
       ]);
-      if (
-        !numbers.includes(number["Elige el número " + (numbers.length + 1)]) &&
-        checkNumber(number["Elige el número " + (numbers.length + 1)]) &&
-        number["Elige el número " + (numbers.length + 1)] >= 1 &&
-        number["Elige el número " + (numbers.length + 1)] <= 49
-      ) {
-        numbers.push(number["Elige el número " + (numbers.length + 1)]);
-      } else {
-        console.log("Entrada no válida.");
-      }
+      getNumber(numbers, number);
     }
     numbers = numbers.map((n) => parseInt(n));
     const result = lottery();
-    console.log(`Tus números son: ${numbers}`);
-    console.log(`La combinación ganadora es: ${result}`);
-    const successes = result.map((n) => numbers.includes(n));
-    console.log(`Número de aciertos: ${successes.reduce((a, b) => a + b, 0)}`);
+    formatOutput(numbers, result);
     let again = await prompt.get(["Quieres probar otra vez ? (S/N)"]);
     if (again["Quieres probar otra vez ? (S/N)"].toLowerCase() === "n") {
       console.log("Adiós");
@@ -40,6 +28,19 @@ function checkNumber(n) {
   return !isNaN(parseInt(n));
 }
 
+function getNumber(numbers, number) {
+  if (
+    !numbers.includes(number["Elige el número " + (numbers.length + 1)]) &&
+    checkNumber(number["Elige el número " + (numbers.length + 1)]) &&
+    number["Elige el número " + (numbers.length + 1)] >= 1 &&
+    number["Elige el número " + (numbers.length + 1)] <= 49
+  ) {
+    numbers.push(number["Elige el número " + (numbers.length + 1)]);
+  } else {
+    console.log("Entrada no válida.");
+  }
+}
+
 function lottery() {
   combination = [];
   while (combination.length < 6) {
@@ -50,4 +51,11 @@ function lottery() {
   }
   combination = combination.map((n) => parseInt(n));
   return combination.sort();
+}
+
+function formatOutput(numbers, result) {
+  console.log(`Tus números son: ${numbers}`);
+  console.log(`La combinación ganadora es: ${result}`);
+  const successes = result.map((n) => numbers.includes(n));
+  console.log(`Número de aciertos: ${successes.reduce((a, b) => a + b, 0)}`);
 }
