@@ -1,4 +1,4 @@
-package main.java.com.mycompany.pais;
+package com.mycompany.pais;
 
 
 public class Ciudad {

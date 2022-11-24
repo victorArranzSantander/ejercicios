@@ -1,7 +1,5 @@
-package main.java.com.mycompany.animales;
-import com.mycompany.animales.Animales;
+package com.mycompany.animales;
 import java.util.Scanner;
-import java.awt.Color;
 
 public class Main {
     public static void main(String[] args) {

@@ -2,7 +2,6 @@ package com.mycompany.pais;
 
 import java.util.ArrayList;
 
-import main.java.com.mycompany.pais.Ciudad;
 
 public class Pais {
 
@@ -10,7 +9,7 @@ public class Pais {
     private int hab;
     private String lang;
     private String cont;
-    ArrayList<Ciudad> ciudades = new ArrayList();
+    ArrayList<Ciudad> ciudades = new ArrayList <Ciudad>();
 
     public Pais(String name, int hab, String lang, String cont) {
         this.name = name;

@@ -1,7 +1,5 @@
-package main.java.com.mycompany.pais;
+package com.mycompany.pais;
 
-import com.mycompany.pais.Pais;
-import com.mycompany.pais.Ciudad;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,6 +1,4 @@
-package main.java.com.mycompany.maximo;
-
-import com.mycompany.maximo.Maximo;
+package com.mycompany.maximo;
 
 public class Main {
     public static void main(String[] args) {
