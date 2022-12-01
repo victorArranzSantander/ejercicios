@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1 >Hola valladolid!!!</h1>
+            <p th:text="${mensaje}"></p>
+            <p> Accediendo a las propiedades de la aplicación desde la vista </p>
+            <p th:text="${saludo}"></p>
+        </div>
+        <div>
+            <br><!-- comment -->
+            <h1> Mis datos: </h1>
+            <div th:if="${!listaPersona.isEmpty() && listaPersona!= null}">
+                <table>
+                <th>Nombre:</th>
+                <th>Apellidos:</th>
+                <th>Email:</th>
+                <th>Teléfono:</th>
+                
+                <tr th:each="persona: ${listaPersona}">
+                    <td th:text="${persona.nombre}">Mostrar persona</td>
+                    <td th:text="${persona.apellidos}">Mostrar apellidos</td>
+                    <td th:text="${persona.email}">Mostrar email</td>
+                    <td th:text="${persona.telefono}">Mostrar telefono</td>
+                </tr>
+            </table>
+            </div>
+            <div th:unless="${!listaPersona.isEmpty() && listaPersona!= null}"> <!-- sino -->
+                <h1> estoy vacía</h1>
+            </div>
+            
+        </div>
+    </body>
+</html>

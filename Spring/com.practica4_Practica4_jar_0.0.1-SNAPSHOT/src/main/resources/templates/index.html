@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Practica 4-Inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+     
+        <div>
+            <br><!-- comment -->
+            <h1> Control clientes: </h1>
+            <a th:href="@{/agregar}">Crear persona</a>
+            <div th:if="${!listaPersona.isEmpty() && listaPersona!= null}">
+                <table>
+                <th>Acción:</th>
+                <th></th>
+                <th>Nombre:</th>
+                <th>Apellidos:</th>
+                <th>Email:</th>
+                <th>Teléfono:</th>
+                
+                <tr th:each="persona: ${listaPersona}">
+                    <td ><a th:href="@{/editar/} + ${persona.idPersona}">Editar</a></td>
+                    <td><a th:href="@{/eliminar/} + ${persona.idPersona}">Eliminar</a></td>
+                    <td th:text="${persona.nombre}">Mostrar persona</td>
+                    <td th:text="${persona.apellidos}">Mostrar apellidos</td>
+                    <td th:text="${persona.email}">Mostrar email</td>
+                    <td th:text="${persona.telefono}">Mostrar telefono</td>
+                </tr>
+            </table>
+            </div>
+            <div th:unless="${!listaPersona.isEmpty() && listaPersona!= null}"> <!-- sino -->
+                <h1> estoy vacía</h1>
+            </div>
+            
+        </div>
+    </body>
+</html>

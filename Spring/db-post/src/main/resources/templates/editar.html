@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Título</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <p>Pantalla para editar un cliente</p>
+            <form method = "post" th:action = "@{/guardar/}+${id}" th:object="${newPersona}">
+                <ul>
+                    <li>Nombre: <input type = "text" th:field = "*{NOMBRE}" name = "NOMBRE" /></li>
+                    <li>Apellidos: <input type = "text" th:field = "*{APELLIDOS}" name = "APELLIDOS" /></li>
+                    <li>Email: <input type = "text" th:field = "*{EMAIL}" name = "EMAIL" /></li>
+                    <li>Teléfono: <input type = "number" th:field = "*{TELEFONO}" name = "TELEFONO" /></li>
+                </ul>
+                <input type = "submit" />
+                <span th:if = "${#fields.hasErrors('NOMBRE')}" th:errors = "*{NOMBRE}">Error en el nombre</span>
+                <span th:if = "${#fields.hasErrors('APELLIDOS')}" th:errors = "*{APELLIDOS}">Error en los apellidos</span>
+                <span th:if = "${#fields.hasErrors('EMAIL')}" th:errors = "*{EMAIL}">Error en el email</span>
+                <span th:if = "${#fields.hasErrors('TELEFONO')}" th:errors = "*{TELEFONO}">Error en el teléfono</span>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Título</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <p>Pantalla para agregar clientes</p>
+            <form method = "post" th:action = "@{/guardar}" th:object="${newPersona}">
+                <ul>
+                    <li><label for="NOMBRE">Nombre:</label> <input type = "text" name = "NOMBRE" th:field = "*{NOMBRE}"/>
+                        <span th:if = "${#fields.hasErrors('NOMBRE')}" th:errors = "*{NOMBRE}">Error en el nombre</span>
+                    </li>
+                    <li><label for="APELLIDOS">Apellidos:</label> <input type = "text" name = "APELLIDOS" th:field = "*{APELLIDOS}"/>
+                        <span th:if = "${#fields.hasErrors('APELLIDOS')}" th:errors = "*{APELLIDOS}">Error en los apellidos</span>
+                    </li>
+                    <li><label for="EMAIL">Email:</label> <input type = "text" name = "EMAIL" th:field = "*{EMAIL}"/>
+                        <span th:if = "${#fields.hasErrors('EMAIL')}" th:errors = "*{EMAIL}">Error en el email</span>
+                    </li>
+                    <li><label for="TELEFONO">Telefono: </label> <input type = "number" name = "TELEFONO" th:field = "*{TELEFONO}"/>
+                        <span th:if = "${#fields.hasErrors('TELEFONO')}" th:errors = "*{TELEFONO}">Error en el teléfono</span>
+                    </li>
+                </ul>
+                <input type = "submit" />
+                
+                
+               
+              
+            </form>
+        </div>
+    </body>
+</html>
