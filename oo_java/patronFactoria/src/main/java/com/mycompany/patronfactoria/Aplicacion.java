@@ -1,4 +1,4 @@
-
+/* Patron factoria */
 package com.mycompany.patronfactoria;
 
 import java.util.Scanner;

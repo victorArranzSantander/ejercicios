@@ -1,4 +1,4 @@
-
+/* Patron estrategia */
 
 package com.mycompany.pokemon;
 

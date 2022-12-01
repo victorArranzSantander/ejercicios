@@ -1,3 +1,4 @@
+/* Patron singleton */
 
 package com.mycompany.singleton;
 
