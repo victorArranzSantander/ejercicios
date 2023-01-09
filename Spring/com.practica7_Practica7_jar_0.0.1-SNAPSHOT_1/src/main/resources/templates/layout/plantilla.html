@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"  >
+    
+    <head>
+        <title>Plantilla</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <header th:fragment="header">
+            <h1 th:text="#{plantilla.titulo}"></h1>
+        </header>
+        
+        <footer th:fragment="footer">
+            <p>[[#{plantilla.pie}]]</p>
+            <form  th:action="@{/logout}" method="post">
+                <b>Usuario: </b> <span sec:authentication="name">Usuario que ha hecho Login</span>
+                <br/>
+                <b>Roles: </b><span sec:authentication="principal.authorities"> Roles del usuario</span>
+                <br/>
+                 <input type="submit" value="Sign Out"/>
+            </form> 
+        </footer>
+    </body>
+   
+</html>

@@ -10,31 +10,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div th:replace = "layout/layout::header"></div>
-        <a th:href="@{/}">Regresar</a>
-        <div>Datos de la persona</div>
+        <a th:href="@{/}">[[#{persona.atrasModif}]]</a>
+        <div>[[#{persona.infoDatos}]]</div>
         <form th:action="@{/guardar}" method="post" th:object="${persona}">
-            <input type = "hidden" th:field ="*{idPersona}"/>
-            <label for="nombre">Nombre: </label>
+            <label for="nombre">[[#{persona.nombre}]] </label>
             <input type="text" name="nombre" th:field="*{nombre}" />
-            <!--<span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error nombre </span>-->
+            <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error nombre </span>
             <br/>
-            <label for="apellidos">Apellidos: </label>
+            <label for="apellidos">[[#{persona.apellidos}]] </label>
             <input type="text" name="apellidos" th:field="*{apellidos}" />
-            <!--<span th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}">Error apellidos </span>-->
+            <span th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}">Error apellidos </span>
             <br/>
-            <label for="telefono">Telefono: </label>
+            <label for="telefono">[[#{persona.telefono}]] </label>
             <input type="number" name="telefono" th:field="*{telefono}" />
           
             <br/>
-            <label for="email">Email: </label>
+            <label for="email">[[#{persona.email}]] </label>
             <input type="email" name="email" th:field="*{email}" />
-           <!-- <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error email </span>-->
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error email </span>
             <br/>
-            <button> Guardar </button>
+            <button type="submit"> [[#{persona.Guardar}]] </button>
            
         </form>
-        
-        <div th:replace = "layout/layout::footer"></div>
     </body>
 </html>

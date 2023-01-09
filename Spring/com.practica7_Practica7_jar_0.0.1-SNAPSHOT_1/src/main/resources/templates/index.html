@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Practica 4-Inicio</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+     
+        <div>
+            <br/><!-- comment -->
+            <header th:replace="layout/plantilla :: header"/>
+            <a th:href="@{/agregar}" sec:authorize="hasRole('ROLE_ADMIN')">[[#{persona.crearPersona}]]</a>
+            <div th:if="${!listaPersona.isEmpty() && listaPersona!= null}">
+                <table>
+                <th th:text="#{persona.accion}" sec:authorize="hasRole('ROLE_ADMIN')"></th>
+                <th sec:authorize="hasRole('ROLE_ADMIN')"></th>
+                <th th:text="#{persona.nombre}">:</th>
+                <th th:text="#{persona.apellidos}"></th>
+                <th th:text="#{persona.email}">:</th>
+                <th th:text="#{persona.telefono}"></th>
+                
+                <tr th:each="persona: ${listaPersona}">
+                    <td sec:authorize="hasRole('ROLE_ADMIN')" ><a th:href="@{/editar/} + ${persona.idPersona}" >[[#{persona.editar}]]</a></td>
+                    <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/eliminar/} + ${persona.idPersona}" >[[#{persona.eliminar}]]</a></td>
+                    <td  th:text="${persona.nombre}">Mostrar persona</td>
+                    <td th:text="${persona.apellidos}">Mostrar apellidos</td>
+                    <td th:text="${persona.email}">Mostrar email</td>
+                    <td th:text="${persona.telefono}">Mostrar telefono</td>
+                </tr>
+            </table>
+            </div>
+            <div th:unless="${!listaPersona.isEmpty() && listaPersona!= null}"> <!-- sino -->
+                <h1 th:text="${persona.mensajeVacio}"> </h1>
+            </div>
+            
+        </div>
+        <div>
+            <a th:href="@{/(lang=es)}">Español</a> |
+            <a th:href="@{/(lang=en)}">Inglés</a>
+        </div>
+        <footer th:replace="/layout/plantilla :: footer"/>
+        
+        
+    </body>
+</html>
