@@ -1,0 +1,6 @@
+com/mycompany/pokemon/Context.class
+com/mycompany/pokemon/AtaqueEspecial.class
+com/mycompany/pokemon/AtaqueEstados.class
+com/mycompany/pokemon/Combate.class
+com/mycompany/pokemon/AtaqueFisico.class
+com/mycompany/pokemon/Strategy.class

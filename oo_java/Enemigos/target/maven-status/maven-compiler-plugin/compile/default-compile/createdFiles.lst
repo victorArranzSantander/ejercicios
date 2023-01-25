@@ -1,0 +1,6 @@
+com/mycompany/enemigos/DecoratorArmadura.class
+com/mycompany/enemigos/EnemigoBase.class
+com/mycompany/enemigos/BaseDecorator.class
+com/mycompany/enemigos/Enemigo.class
+com/mycompany/enemigos/Enemigos.class
+com/mycompany/enemigos/DecoratorEspada.class
